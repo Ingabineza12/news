@@ -7,8 +7,14 @@ from app import app
 def index():
 
     '''
-    View root page function that returns the index page and its data
+    view toot page
     '''
+    sources=get_sources('general')
+    business_sources = get_sources('business')
+    sports_sources=get_sources('sports')
 
-    title = 'News home - Welcome to The best News Review Website'
-    return render_template('index.html', title = title)
+    technology_sources=get_sources('technology')
+
+    entertainment_sources=get_sources('entertainment')
+    title="News Highlighter"
+    return render_template('index.html', title=title, sources=sources ,business_sources=business_sources,sports_sources=sports_sources,technology_sources=technology_sources,entertainment_sources=entertainment_sources)
