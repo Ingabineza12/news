@@ -1,14 +1,25 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the news Review website </title>
-        {% endif %}
-    </head>
-    <body>
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
 
-    </body>
-</html>
+{% block content%}
+<div class="container" ><!--  style="color: white; background-image: url('https://res.cloudinary.com/drrezzrvd/image/upload/v1568464281/images_1_hg7jgo.jpg'); background-repeat: no-repeat; background-size: cover; width: 80%" -->
+
+    <h2 style="text-align: center"> Top Technology News Sources</h2>
+    <hr>
+    {{macro.displaySourceList(technology_sources)}}
+
+    <h2 style="text-align: center">Top Business New Sources</h2>
+    <hr>
+    {{ macro.displaySourceList(sources)}}
+
+    <h2 style="text-align: center" >Top Entertainment News</h2>
+    <hr>
+    {{ macro.displaySourceList(entertainment_sources)}}
+
+    <h2 style="text-align: center">Top Sport News Sources</h2>
+    <hr>
+    {{ macro.displaySourceList(sports_sources)}}
+
+</div>
+
+{% endblock%}
