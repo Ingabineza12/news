@@ -1,0 +1,18 @@
+{% macro displaySourceList(source_list) %}
+
+{% for source_row in source_list |batch(4) %}
+
+<div class="row ">
+    {% for sources in source_row %}
+    <div class="col-md-3">
+        <div class="" style="background-color: transparent">
+            <h4>{{sources.name}}</h4>
+            <p style="color: white"> {{sources.description |truncate(100)}}</p>
+            <button class="btn btn-primary"> <a href="/sources/{{sources.id}}" style="color: white">{{sources.name}}</a></button>
+            </div>
+            <hr>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+{% endmacro %}
