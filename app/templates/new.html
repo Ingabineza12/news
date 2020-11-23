@@ -1,0 +1,189 @@
+<!-- {% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+
+
+{%block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background:url({{new.urlToImage}}) no repeat center center">
+
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 new-details">\
+
+            <h3>{{new.title}}</h3>
+            <p class="description">{{new.description}}</p>
+            <p class="ratings">{{new.description}}</p>
+            <p class="descri# #getting the api key
+# api_key = None
+
+# #getting the news base url
+# base_url = None
+
+# #getting the articlces url
+# articles_url = None
+
+# def configure_request(app):
+# 	global api_key,base_url,articles_url
+# 	api_key = app.config['NEWS_API_KEY']
+# 	base_url = app.config['NEWS_SOURCES_BASE_URL']
+# 	articles_url = app.config['ARTICLES_BASE_URL']
+
+# def get_sources(category):
+	# '''
+	# Function that gets the json response to our url request
+	# # '''
+	# get_sources_url = base_url.format(category,api_key)
+
+	# with urllib.request.urlopen(get_sources_url) as url:
+	# 	get_sources_data = url.read()
+	# 	get_sources_response = json.loads(get_sources_data)
+
+	# 	sources_results = None
+
+	# 	if get_sources_response['sources']:
+	# 		sources_results_list = get_sources_response['sources']
+	# 		sources_results = process_sources(sources_results_list)
+
+	# return sources_resultsption">{{new.description}}</p>
+            <p class="btn-su# #getting the api key
+# api_key = None
+
+# #getting the news base url
+# base_url = None
+
+# #getting the articlces url
+# articles_url = None
+
+# def configure_request(app):
+# 	global api_key,base_url,articles_url
+# 	api_key = app.config['NEWS_API_KEY']
+# 	base_url = app.config['NEWS_SOURCES_BASE_URL']
+# 	articles_url = app.config['ARTICLES_BASE_URL']
+
+# def get_sources(category):
+	# '''
+	# Function that gets the json response to our url request
+	# # '''
+	# get_sources_url = base_url.format(category,api_key)
+
+	# with urllib.request.urlopen(get_sources_url) as url:
+	# 	get_sources_data = url.read()
+	# 	get_sources_response = json.loads(get_sources_data)
+
+	# 	sources_results = None
+
+	# 	if get_sources_response['sources']:
+	# 		sources_results_list = get_sources_response['sources']
+	# 		sources_results = process_sources(sources_results_list)
+
+	# return sources_resultsccess"><a href="{{new.url">read more</a></p>
+# #getting the api key
+# api_key = None
+
+# #getting the news base url
+# base_url = None
+
+# #getting the articlces url
+# articles_url = None
+
+# def configure_request(app):
+# 	global api_key,base_url,articles_url
+# 	api_key = app.config['NEWS_API_KEY']
+# 	base_url = app.config['NEWS_SOURCES_BASE_URL']
+# 	articles_url = app.config['ARTICLES_BASE_URL']
+
+# def get_sources(category):
+	# '''
+	# Function that gets the json response to our url request
+	# # '''
+	# get_sources_url = base_url.format(category,api_key)
+
+	# with urllib.request.urlopen(get_sources_url) as url:
+	# 	get_sources_data = url.read()
+	# 	get_sources_response = json.loads(get_sources_data)
+
+	# 	sources_results = None
+
+	# 	if get_sources_response['sources']:
+	# 		sources_results_list = get_sources_response['sources']
+	# 		sources_results = process_sources(sources_results_list)
+
+	# return sources_results
+        </div># #getting the api key
+# api_key = None
+
+# #getting the news base url
+# base_url = None
+
+# #getting the articlces url
+# articles_url = None
+
+# def configure_request(app):
+# 	global api_key,base_url,articles_url
+# 	api_key = app.config['NEWS_API_KEY']
+# 	base_url = app.config['NEWS_SOURCES_BASE_URL']
+# 	articles_url = app.config['ARTICLES_BASE_URL']
+
+# def get_sources(category):
+	# '''
+	# Function that gets the json response to our url request
+	# # '''
+	# get_sources_url = base_url.format(category,api_key)
+
+	# with urllib.request.urlopen(get_sources_url) as url:
+	# 	get_sources_data = url.read()
+	# 	get_sources_response = json.loads(get_sources_data)
+
+	# 	sources_results = None
+
+	# 	if get_sources_response['sources']:
+	# 		sources_results_list = get_sources_response['sources']
+	# 		sources_results = process_sources(sources_results_list)
+
+	# return sources_results
+    </div># #getting the api key
+# api_key = None
+
+# #getting the news base url
+# base_url = None
+
+# #getting the articlces url
+# articles_url = None
+
+# def configure_request(app):
+# 	global api_key,base_url,articles_url
+# 	api_key = app.config['NEWS_API_KEY']
+# 	base_url = app.config['NEWS_SOURCES_BASE_URL']
+# 	articles_url = app.config['ARTICLES_BASE_URL']
+
+# def get_sources(category):
+	# '''
+	# Function that gets the json response to our url request
+	# # '''
+	# get_sources_url = base_url.format(category,api_key)
+
+	# with urllib.request.urlopen(get_sources_url) as url:
+	# 	get_sources_data = url.read()
+	# 	get_sources_response = json.loads(get_sources_data)
+
+	# 	sources_results = None
+
+	# 	if get_sources_response['sources']:
+	# 		sources_results_list = get_sources_response['sources']
+	# 		sources_results = process_sources(sources_results_list)
+
+	# return sources_results
+    <div class="row">
+        <h1>Reviews</h1>
+        <hr>
+        {% if reviews% }
+            {{macro.displayReviews(reviews)}}
+        {%else%}
+            <h3 class="text-center"> This new has no reviews</h3>
+            <a class="btn btn-success btn-lg text-center" href="/new/review/new/{{new.id}}"> Write a new revieew</a>
+
+    </div>
+
+</div>
+{% endif %} -->
