@@ -1,0 +1,32 @@
+
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+{% block content %}
+
+            <div class="container">
+                    <form>
+                        <input type="text" name="movie_query" placeholder="Search for a News" class="form-control">
+                        <input type="submit"  value="Submit" class="btn btn-default">
+                    </form>
+
+                </div>
+               <div class="row">
+                   <div class="col-md-12">
+
+        <div class="row">
+
+            <h3> Found {{ sources| count }} matches </h3>
+            <hr>
+            <ul>
+                    {% for general in new_general %}
+
+                    <h2> {{ general.name}}</h2>
+
+                    {% endfor %}
+            </ul>
+
+        </div>
+
+
+{% endblock %}
