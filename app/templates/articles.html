@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="container" style="background-image: url('https://res.cloudinary.com/drrezzrvd/image/upload/v1568464281/images_1_hg7jgo.jpg'); background-repeat: no-repeat; background-size: cover; width: 80%">
+	<h2 style="color: white; text-align:center" >Top Articles</h2>
+	{% for article_row in articles | batch(4)%}
+    <div class="row">
+		{% for article in article_row%}
+		<div class="col-md-3">
+			<div class="thumbnail"style="background-color: transparent; text-align:center">
+				<a href="{{article.url}}" target="_blank"><img src="{{article.image}}" alt="{{article.title}}" class="img-responsive" style="height:30px"></a>
+				<div class="caption" style="color: white">
+					<h4><a href ="{{article.url}}" target="_blank"  style="color: white">{{article.title | truncate(35)}}</a></h4>
+					<p>{{article.decription | truncate(80)}}</p>
+					<a href="{{article.url}}" target="_blank"><strong>Read More</strong></a>
+				</div>
+					<div class="footer" style="color: white">
+						Published at:{{article.date}}
+
+					</div>
+
+			</div>
+		</div>
+		{%endfor%}
+	</div>
+	{%endfor%}
+
+</div>
+
+{% endblock%}
